@@ -4,7 +4,7 @@ Just a demo for now. Very dirty code inside; you have been warned!
 
 ## Supported devices
 
-[X] QEMU with U-Boot
+- [X] QEMU with U-Boot
 
 Requires a properly configured, recent-ish U-Boot that provides a correct device tree, which is... hard to find on real hardware these days. I really hope one day vendors can do this right, but until then we might have to make do with hacky things like `/dtbs/${fdtfile}`.
 
@@ -13,11 +13,11 @@ Requires a properly configured, recent-ish U-Boot that provides a correct device
 Prepare U-Boot and disk image:
 
 ```console
-$ nix build -o uboot .#ubootQemuRiscv64Smode
-$ nix build -o image .#nixos-image
+$ nix build -o uboot ".#ubootQemuRiscv64Smode"
+$ nix build -o image ".#nixos-image"
 $ cp image/efi-image.img .
 $ chmod u+w efi-image.img
-$ truncate -s4G efi-image.img  # Size to your liking
+$ truncate -s 4G efi-image.img  # Size to your liking
 ```
 
 Boot the image:
