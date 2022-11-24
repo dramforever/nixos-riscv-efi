@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1669179319,
+        "narHash": "sha256-ACY+xwW53WOz+4vwZILAXH9HU5zj29rvIeFjkQGDPiU=",
+        "owner": "NickCao",
+        "repo": "nixpkgs",
+        "rev": "e783dba13a7c3bd6f7de3204d332b983a1d1f6af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NickCao",
+        "ref": "riscv",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-staging": {
+      "locked": {
+        "lastModified": 1669274614,
+        "narHash": "sha256-Tnw6c1waLwRdAubSPEYTsu2r6HddsYbInR3ZIlJq8hI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d7a9f5f001ea6a93389453d4e071ab340603fff0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "staging",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-staging": "nixpkgs-staging"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
