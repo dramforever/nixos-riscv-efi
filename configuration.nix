@@ -16,7 +16,6 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/NIXOS_EFI";
     fsType = "vfat";
-    neededForBoot = true;
   };
 
   fileSystems."/" = {

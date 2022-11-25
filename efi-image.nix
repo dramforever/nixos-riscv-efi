@@ -1,6 +1,8 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
+  fileSystems.${config.boot.loader.efi.efiSysMountPoint}.neededForBoot = true;
+
   system.build.efiImage =
     let
       toplevel = config.system.build.toplevel;
@@ -73,4 +75,10 @@
     fi
   '';
 
+  assertions = [
+    {
+      assertion = config.boot.loader.systemd-boot.enable;
+      message = "Building EFI Image requires systemd-boot";
+    }
+  ];
 }
