@@ -42,6 +42,8 @@
         initrd /efi/nixos/$initrdDest
         options init=${toplevel}/init $(cat ${toplevel}/kernel-params)
         END
+
+        cp --no-preserve=mode -r ${config.hardware.deviceTree.package} esp/dtbs
       '';
 
     in pkgs.callPackage ./make-efi-image {
