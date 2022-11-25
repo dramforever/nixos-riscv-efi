@@ -32,8 +32,8 @@
         kernelDest="$(toEspName "${toplevel}/kernel")"
         initrdDest="$(toEspName "${toplevel}/initrd")"
 
-        install -m755 "${toplevel}/kernel" "esp/EFI/nixos/$kernelDest"
-        install -m755 "${toplevel}/initrd" "esp/EFI/nixos/$initrdDest"
+        cp --no-preserve=mode "${toplevel}/kernel" "esp/EFI/nixos/$kernelDest"
+        cp --no-preserve=mode "${toplevel}/initrd" "esp/EFI/nixos/$initrdDest"
 
         cat > esp/loader/entries/initial-nixos.conf <<END
         title NixOS

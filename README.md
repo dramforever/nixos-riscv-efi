@@ -15,8 +15,7 @@ Prepare U-Boot and disk image:
 ```console
 $ nix build -o uboot ".#ubootQemuRiscv64Smode"
 $ nix build -o image ".#nixos-image"
-$ cp image/efi-image.img .
-$ chmod u+w efi-image.img
+$ cp --no-preserve=mode image/efi-image.img .
 $ truncate -s 4G efi-image.img  # Size to your liking
 ```
 
