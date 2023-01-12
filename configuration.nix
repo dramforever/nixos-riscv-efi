@@ -23,6 +23,10 @@
     fsType = "ext4";
   };
 
+  # Improve build speed
+  documentation.nixos.enable = false;
+  systemd.shutdownRamfs.enable = false;
+
   systemd.services."serial-getty@hvc0".enable = false;
   services.getty.autologinUser = "root";
 }
